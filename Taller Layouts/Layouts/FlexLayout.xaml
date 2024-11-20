@@ -3,17 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Taller_Layouts.FlexLayout"
              Title="FlexLayout">
-    <FlexLayout Direction="Row" JustifyContent="SpaceBetween" AlignItems="Center" Padding="10">
+    <FlexLayout Direction="Column" JustifyContent="Start" AlignItems="Start" Padding="10">
 
-        <StackLayout HorizontalOptions="CenterAndExpand">
-            <Image x:Name="imagen1" Source="/Imagenes/imagen1.png" WidthRequest="100" HeightRequest="100" />
-            <Label Text="Imagen 1" HorizontalOptions="Center" />
-        </StackLayout>
+        <!-- Primer elemento con imagen y texto -->
+        <FlexLayout Direction="Row" AlignItems="Center" Spacing="10">
+            <Image x:Name="imagen1" Source="Resources/Images/imagen1.svg" WidthRequest="50" HeightRequest="50">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnImageTapped" CommandParameter="imagen1" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="Imagen 1" VerticalOptions="Center" />
+        </FlexLayout>
 
-        <StackLayout HorizontalOptions="CenterAndExpand">
-            <Image x:Name="imagen2" Source="/Imagenes/imagen2.png" WidthRequest="100" HeightRequest="100" />
-            <Label Text="Imagen 2" HorizontalOptions="Center" />
-        </StackLayout>
+        <!-- Segundo elemento con imagen y texto -->
+        <FlexLayout Direction="Row" AlignItems="Center" Spacing="10">
+            <Image x:Name="imagen2" Source="Resources/Images/imagen2.svg" WidthRequest="50" HeightRequest="50">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnImageTapped" CommandParameter="imagen2" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="Imagen 2" VerticalOptions="Center" />
+        </FlexLayout>
 
     </FlexLayout>
 </ContentPage>

@@ -1,27 +1,28 @@
-namespace Taller_Layouts;
+using Microsoft.Maui.Controls;
 
-public partial class FlexLayout : ContentPage
+namespace Taller_Layouts
 {
-    public FlexLayout()
+    public partial class FlexLayout : ContentPage
     {
-        InitializeComponent();
+        public FlexLayout()
+        {
+            InitializeComponent();
+        }
 
-        TapGestureRecognizer tapGesture1 = new TapGestureRecognizer();
-        tapGesture1.Tapped += OnImageTapped1;
-        imagen1.GestureRecognizers.Add(tapGesture1);
+        // Este método maneja el evento cuando se hace clic en una imagen
+        private async void OnImageTapped(object sender, EventArgs e)
+        {
+            var tappedImage = (sender as TapGestureRecognizer).CommandParameter.ToString();
 
-        TapGestureRecognizer tapGesture2 = new TapGestureRecognizer();
-        tapGesture2.Tapped += OnImageTapped2;
-        imagen2.GestureRecognizers.Add(tapGesture2);
-    }
-
-    private async void OnImageTapped1(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new AbsoluteLayout());
-    }
-
-    private async void OnImageTapped2(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new AbsoluteLayout());
+            // Aquí puedes hacer la lógica para navegar a AbsoluteLayout
+            if (tappedImage == "imagen1")
+            {
+                await Navigation.PushAsync(new AbsoluteLayout()); // Cambia AbsoluteLayoutPage por el nombre de tu página
+            }
+            else if (tappedImage == "imagen2")
+            {
+                await Navigation.PushAsync(new AbsoluteLayout()); // Cambia AbsoluteLayoutPage por el nombre de tu página
+            }
+        }
     }
 }

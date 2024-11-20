@@ -9,7 +9,7 @@
         Padding="10">
 
         <Label 
-            Text="Esto es un Label que demuestra que estoy usando StackLayout."
+            Text="Mauricio Mora"
             FontSize="24"
             VerticalOptions="Start"
             HorizontalOptions="Start" 
@@ -17,7 +17,7 @@
             Padding="5" />
 
         <Label 
-            Text="Este es otro texto más pequeño."
+            Text="Mauricio Mora"
             FontSize="18"
             VerticalOptions="Start"
             HorizontalOptions="Start"
@@ -25,7 +25,7 @@
             Padding="5" />
 
         <Label 
-            Text="Este es otro texto aún más pequeño."
+            Text="Mauricio Mora"
             FontSize="14"
             VerticalOptions="Start"
             HorizontalOptions="Start"

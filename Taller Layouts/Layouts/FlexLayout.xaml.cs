@@ -7,24 +7,40 @@ namespace Taller_Layouts
         public FlexLayout()
         {
             InitializeComponent();
-
-            TapGestureRecognizer tapGesture1 = new TapGestureRecognizer();
-            tapGesture1.Tapped += OnImageTapped1;
-            imagen1.GestureRecognizers.Add(tapGesture1);
-
-            TapGestureRecognizer tapGesture2 = new TapGestureRecognizer();
-            tapGesture2.Tapped += OnImageTapped2;
-            imagen2.GestureRecognizers.Add(tapGesture2);
         }
 
         private async void OnImageTapped1(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AbsoluteLayout());
+            // Navega a AbsoluteLayout sin duplicados
+            if (Navigation.NavigationStack.LastOrDefault()?.GetType() != typeof(AbsoluteLayout))
+            {
+                await Navigation.PushAsync(new AbsoluteLayout());
+            }
         }
 
         private async void OnImageTapped2(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AbsoluteLayout());
+            // Asegura que no haya duplicación
+            if (Navigation.NavigationStack.LastOrDefault()?.GetType() != typeof(AbsoluteLayout))
+            {
+                await Navigation.PushAsync(new AbsoluteLayout());
+            }
+        }
+
+        private async void OnLabelTapped1(object sender, EventArgs e)
+        {
+            if (Navigation.NavigationStack.LastOrDefault()?.GetType() != typeof(AbsoluteLayout))
+            {
+                await Navigation.PushAsync(new AbsoluteLayout());
+            }
+        }
+
+        private async void OnLabelTapped2(object sender, EventArgs e)
+        {
+            if (Navigation.NavigationStack.LastOrDefault()?.GetType() != typeof(AbsoluteLayout))
+            {
+                await Navigation.PushAsync(new AbsoluteLayout());
+            }
         }
     }
 }

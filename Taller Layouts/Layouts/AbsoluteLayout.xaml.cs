@@ -13,6 +13,7 @@ namespace Taller_Layouts
             for (int i = 0; i < 30; i++)
             {
                 labels.Add("Soy Mauricio Mora");
+                labels.Add("Soy Mateo Sotomayor");
             }
 
             LabelListView.ItemsSource = labels;

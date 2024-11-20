@@ -3,10 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Taller_Layouts.AbsoluteLayout"
              Title="AbsoluteLayout">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <AbsoluteLayout>
+
+        <ScrollView AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All">
+            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                <ListView x:Name="LabelListView" 
+                          ItemTemplate="{Binding}" 
+                          HorizontalOptions="Center" 
+                          VerticalOptions="CenterAndExpand">
+                </ListView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <Button Text="Ir al GridLayout"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Margin="10"
+                Clicked="OnButtonClicked"
+                AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize" 
+                AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+    </AbsoluteLayout>
 </ContentPage>

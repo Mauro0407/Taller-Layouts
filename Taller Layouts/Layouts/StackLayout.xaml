@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Taller_Layouts.StackLayout"
+             Title="StackLayout">
+    <StackLayout 
+        Orientation="Vertical" 
+        Spacing="20"
+        Padding="10">
+
+        <Label 
+            Text="Esto es un Label que demuestra que estoy usando StackLayout."
+            FontSize="24"
+            VerticalOptions="Start"
+            HorizontalOptions="Start" 
+            Margin="10"     
+            Padding="5" />
+
+        <Label 
+            Text="Este es otro texto más pequeño."
+            FontSize="18"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            Margin="10"
+            Padding="5" />
+
+        <Label 
+            Text="Este es otro texto aún más pequeño."
+            FontSize="14"
+            VerticalOptions="Start"
+            HorizontalOptions="Start"
+            Margin="10"
+            Padding="5" />
+
+        <Button 
+            Text="Ir a FlexLayout"
+            FontSize="16"
+            VerticalOptions="End"
+            HorizontalOptions="Center"
+            Clicked="OnNavigateToFlexLayout" />
+
+    </StackLayout>
+</ContentPage>
